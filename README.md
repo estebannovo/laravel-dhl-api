@@ -11,7 +11,7 @@ This was built and tested ONLY on Laravel 5.5, although I'm sure it'll work on p
 ### Installing
 
 ```
-composer require misterbrownrsa/laravel-dhl-api
+composer require estebannovo/laravel-dhl-api
 ```
 
 Since Laravel 5.5 automatically includes the service provider, it won't be necessary to register it. However, if you really want to, run the following command
@@ -29,7 +29,7 @@ This is typically used to test the validity of addresses and DHL's capability to
 ```
 $user = User::first();
 
-$GetCapability = new \MisterBrownRSA\DHL\API\GetCapability();
+$GetCapability = new \EstebanNovo\DHL\API\GetCapability();
 $GetCapability->user($user);
 dd($GetCapability->validate());
 ```
@@ -62,7 +62,7 @@ foreach ($cart->items as $key => $cartItem) {
 ```
 
 ```
-$GetQuote = new \MisterBrownRSA\DHL\API\GetQuote();
+$GetQuote = new \EstebanNovo\DHL\API\GetQuote();
 $GetQuote->user($user)
     ->reference($cart->order->reference)
     ->addProduct($product)
